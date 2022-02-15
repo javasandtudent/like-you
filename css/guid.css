@@ -1,0 +1,40 @@
+.main {
+	margin-top: 70px;
+}
+
+.sidebar {
+	position: fixed;
+	top: 82px;
+	width: 320px;
+	background: rgba(147, 128, 224, 0.45);
+	border: rgb(226, 157, 157) solid 5px;
+}
+
+.sidebar ul li {
+	list-style: none;
+	line-height: 2.5em;
+	margin-left: 20px;
+}
+
+.left-content h3 {
+	font-size: 2.5em;
+	font-weight: bold;
+	color: rgb(41, 63, 150);
+}
+
+.right {
+	height: 800px;
+	overflow-y: auto;
+}
+
+@media (max-width:992px) {
+	.sidebar {
+		display: none;
+	}
+}
+
+.ainired {
+	color: #ff0000;
+}
+
+

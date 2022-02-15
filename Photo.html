@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<title>图片轮播</title>
+
+		<link href="library/css/bootstrap.min.css" rel="stylesheet" />
+		<!-- JQuery(Bootstrap的所有JavaScript插件都依赖Jquery,所以必须放前面) -->
+		<script src="library/js/jquery.min.js"></script>
+		<!-- 加载Bootstrp 所有JacaScript插件。你也可以更具需要只加载单个插件 -->
+		<script src="library/js/bootstrap.min.js"></script>
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/Photo.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar my-navba navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#navbar" aria-expanded="false"> <span class="sr-only">Toggle
+								navigation</span><span class="icon-bar"></span><span class="icon-bar"><span
+									class="icon-bar"></span>
+						</button>
+						<h1>曾猪猪</h1>
+					</div>
+					<div class="collapse navbar-collapse navbar-right" id="navbar">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="home.html">首页<span class="sr-only">(current)</span></a>
+							</li>
+							<li><a href="guid.html">懂爱</a> </li>
+							<li><a href="recommend.html">除夕烟花</a></li>
+								<li><a href="Photo.html">照片墙</a></li>
+							<li><a href="#">在线填报</a></li>
+							<li><a href="#">领事服务</a></li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="搜索" />
+									<div class="input-group-addon"><img src="images/search-icon.png"
+											style="display: block;" /> </div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<!-- 导航结束 -->
+			<div class="content">
+				<div class="threeD">
+					<div class="threeD heart">
+					</div>
+					<div class="threeD cube">
+						<div><img src="img/pig/微信图片_20220203110236.jpg" alt="" /> </div>
+						<div><img src="img/pig/微信图片_20220203110146.jpg" alt="" /> </div>
+						<div><img src="img/pig/微信图片_20220203110304.jpg" alt="" /> </div>
+						<div><img src="img/pig/微信图片_20220203110320.jpg" alt="" /> </div>
+						<div><img src="img/pig/微信图片_20220203110333.jpg" alt="" /> </div>
+						<div><img src="./img/pig/微信图片_20220203110301.jpg" alt="" /> </div>
+						<div><img src="img/pig/微信图片_20220203110229.jpg" alt="" /> </div>
+					</div>
+				</div>
+			</div>
+			
+
+			<script type="text/javascript">
+				var heart = document.getElementsByClassName("heart")[0];
+				var n = 36;
+				var m = 360 / n;
+
+				//获取随机颜色
+				var getRandomColor = function() {
+					return '#' + (function(color) {
+						return (color += '0123456789abcdef' [Math.floor(Math.random() * 16)]) && (color.length == 6) ?
+							color : arguments.callee(color);
+					})('');
+				}
+				//创建n条半心形线段
+				for (var i = 0; i < n; i++) {
+					var div = document.createElement("div");
+					div.className = "rib";
+					div.style.borderColor = getRandomColor();
+					//画线
+					div.style.transform = "rotateY(" + m * i + "deg) rotateZ(45deg) translateX(30px)";
+					heart.appendChild(div);
+				}
+				//每隔0.1秒随机上色,相比较每1秒上色，这样上色更柔和
+				setInterval(function() {
+					for (var i = 0; i < n; i++) {
+						document.getElementsByClassName('rib')[i].style.borderColor = getRandomColor();
+					}
+				}, 100)
+			</script>
+		</div>
+	</body>
+</html>

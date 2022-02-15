@@ -1,0 +1,22 @@
+body{
+	padding-top: 70px;
+	font-size: 1em;
+}
+p,h1,h2,h3,h4,h5,h6,label{
+	font-family: "microsoft yahei";
+}
+ul,div{
+	padding: 0;
+	margin: 0;
+}
+ul li{
+	list-style: none;
+}
+a,a:hover{
+	text-decoration: none;
+}
+.navbar-header>h1{
+	color: #FFFFFF;
+	font-weight: 700;
+}
+.my-
